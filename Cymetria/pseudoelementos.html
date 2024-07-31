@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* estilos en linea, son los atributos que tiene la etiqueta 
+        dentro de sus atributos (style como atributo rn la etiqueta)*/
+        /*Selector ID*/
+        p:hover{
+            color: darkorchid;
+            background-color: azure;
+
+        }
+        p::after{ /*agrega guion al final*/
+            content: "_";
+        }
+        p::before{
+            content: "!";
+        }
+
+        /*los :: indican pseudoclase*/
+        p::first-letter{
+            color: brown;
+        }
+
+        ::placeholder{
+            color:darkolivegreen;
+        }
+
+        div p:nth-child(2){
+            color: blue;
+
+        }
+
+        /*FOCUS*/
+
+        input{
+            border: 2px aqua;
+            outline: none;
+        }
+
+        input:focus{
+            border-color: darkblue;
+            box-shadow: 0 0 5px darkgrey;
+        }
+    </style>
+</head>
+<body>
+    <p>Hola mundo</p>
+    <div>
+        <p>Prueba</p>
+        <p>Prueba 2</p>
+    </div>
+    <input type="text" placeholder="Nombre">
+    <hr/>
+
+    <!-- FOCUS -->
+
+    <form action="">
+
+        <label for="nombre"></label>
+        <input type="text" id="nombre">
+
+    </form>
+
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1{
+            color: darkblue !important;
+        }/*!important le da prioridad al estilo*/
+        h1{
+            color: red;
+        }
+        #curso-id{ /*Id tiene mas peso que class*/
+            color: aqua;
+        }
+        .curso-class{
+            color: darkgoldenrod;
+        }
+
+        *{
+            color: aquamarine;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Hola mundo</h1>
+    <div class="curso-class" id="curso-id">
+        <h2> Probando especificidad</h2>
+    </div>
+
+    <br/>
+    <hr>
+    <br/>
+
+    <p>P con el important</p>
+    <p>p con estilo en linea</p>
+    <p>p con ID</p>
+    <p>P con clases</p>
+    <p>P con elemento</p>
+    <p>P universal</p>
+
+
+</body>
+</html>
