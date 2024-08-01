@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--FLEX-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex display</title>
+    <style>
+        .container{
+            display: flex;/** Especificar el display**/
+            height: 200px;
+            background-color: aqua;
+            justify-content: center;/* Alinear en Horizontal**/
+            align-items: center; /*Alinear en vertical*/
+            flex-direction: column;
+        }
+        .item{
+            width: 30px;
+            height: 30px;
+            background-color: blueviolet;
+        }
+        .container .item:nth-child(2n + 1){/** el 2n + 1 permite que se cambien color a un item sí y otro no (impares)*/
+            /*width: 40px;*/
+            /*height: 40px;*/
+            background-color: brown;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item"></div><!-- para que tome el estilo hay que asignarle la misma clase a todos los items -->
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    
+</body>
+</html>
