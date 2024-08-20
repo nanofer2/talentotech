@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="text/javascript">
+      let numero1 = parseInt(prompt("digite el primer numero"), 10);
+      let numero2 = parseInt(prompt("Ddigite el segundo numero"), 10);
+      let operador = prompt("ingrese la Operacion").toLowerCase();
+      var total = 0;
+
+      var total2 = eval(numero1+operador+numero2);//permite evaluar la operacion
+
+      switch (operador) {
+        case "suma":
+          total = numero1 + numero2;
+          break;
+        case "resta":
+          total = numero1 - numero2;
+          break;
+        case "multiplicacion":
+          total = numero1 * numero2;
+          break;
+        case "division":
+          total = numero1 / numero2;
+          break;
+        case "+":
+          total = numero1 + numero2;
+          break;
+        case "-":
+          total = numero1 - numero2;
+          break;
+        case "*":
+          total = numero1 * numero2;
+          break;
+        case "/":
+          total = numero1 / numero2;
+          break;
+      }
+
+      alert(
+        "el valor de la " +
+          operador +
+          " de" +
+          numero1 +
+          " y " +
+          numero2 +
+          " es igual a : " +
+          total
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

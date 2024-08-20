@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function calcularInteres(total){
+        //var valorPrestado = 100000;
+        let monto = document.getElementById("monto").value;
+        var valorPrestado = parseInt(monto,10);
+        let valorInteres = document.getElementById("interes").value;
+        //let valorPrestado = parseInt( prompt("Digite el monto"), 10);
+        //let interes = parseInt( prompt("digite el interes"),10);
+        var interes = parseInt( valorInteres,10);
+        var porcentaje = interes / 100;
+        var valPorcentaje = porcentaje * valorPrestado;
+        var total = valPorcentaje+valorPrestado;
+        alert("el valor Total a pagar es "+total);
+        }
+
+
+    </script>
+</head>
+<body>
+    <section><h1>Calculador de intereses</h1></section>
+    <form>
+        <label for="monto">monto</label>
+        <input type="text" id="monto"/>
+        <br><br>
+        <label for="interes">interes</label>
+        <input type="text" id="interes"/>
+        <br><br>
+        <button onclick="calcularInteres()">Calcular interes</button>
+    </form>
+    
+</body>
+</html>
