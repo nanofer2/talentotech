@@ -1,0 +1,126 @@
+<html>
+
+  <head>
+
+    <title>Posicionamiento sticky</title>
+
+    <style>
+
+      h1 {
+        background-color: rgb(13, 67, 245);
+        color: white;
+        border-radius: 20px;
+        font-family: "Times New Roman", Times, serif;
+      }
+
+      body {
+        height: 1500px;
+      }
+
+      .container {
+        height: 1000px;
+        background-color: white;
+        font-size: 1.5rem;
+        border: 2px solid rgb(13, 67, 245);
+      }
+
+      .elemento1 {
+        font-size: 1.5rem;
+        left: 500px;
+        top: 0;
+        background-color: rgb(13, 67, 245);
+        color: white;
+        position: sticky;
+        padding: 25px;
+        width: 200px;
+      }
+
+      .elemento2 {
+        left: 0;
+        top: 0;
+        height: auto;
+        padding: 25px;
+        position: sticky;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <h1><center>Posicionamiento sticky</center></h1>
+
+    <div class="container">
+      <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+        nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+        volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+        ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+      </p>
+
+      <div class="elemento1">Ejemplo de elemento fijado o "pegado"</div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+        nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+        volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+        ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+        nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+        volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+        ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+      </p>
+
+      <div class="elemento2"><img src="c.jpg" width="225" /></div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+        nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+        volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+        ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+        nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+        volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+        ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+      </p>
+
+    </div>
+
+  </body>
+
+</html>
+
+
+<!--responsive con media-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Media query</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+        @media (max-width: 600px) {
+            body {
+                background-color: violet; /* Si la pantalla es pequeña, fondo violeta */
+            }
+        }
+        @media (min-width: 601px) and (max-width: 1200px) {
+            body {
+                background-color: lightgreen; /* Si la pantalla es mediana, fondo verde claro */
+            }
+        }
+        @media (min-width: 1201px) {
+            body {
+                background-color: lightyellow; /* Si la pantalla es grande, fondo amarillo claro */
+            }
+        }
+    </style>
+</head>
+<body>
+</body>
+</html>
+

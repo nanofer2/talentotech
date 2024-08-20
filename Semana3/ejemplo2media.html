@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ejemplo en query</title>
+  </head>
+  <style>
+    * {
+      margin: auto;
+      padding: 0;
+    }
+    body {
+      width: 1000px;
+      font-family: sans-serif;
+    }
+    .banner {
+      
+      height: 600px;
+      background-image: url(/fondo.jpg);
+      background-size: cover;
+      color: aliceblue;
+      display: flex;
+    }
+    button{
+        padding: 20px 50px;
+        background-color: brown;
+        color: antiquewhite;
+        cursor: pointer;
+    }
+    h1 {
+      font-size: 80px;
+    }
+    .texto {
+      width: 45%;
+    }
+    .image {
+      width: 45%;
+    }
+    .image img {
+      width: 80%;
+    }
+    .image .imagen2 {
+      display: none;
+    }
+    @media   (max-width: 800px)  {
+        body{
+            width: 100%;
+        }
+      h1 {
+        font-size: 38px;
+        color: brown;
+      }
+
+      .banner {
+        flex-direction: column;
+        margin: auto;
+        padding: 40px;
+      }
+      .texto {
+        width: 100%;
+      }
+      .image img{
+        width: 250px;
+        text-align: left;
+      }
+      .image .imagen1 {
+      display: none;
+    }
+    .image .imagen2 {
+      display: block;
+    }
+    }
+  </style>
+  <body>
+    <div class="banner">
+      <div class="texto">
+        <h1>Acá va el titulo</h1>
+        <br /><br />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa ipsum
+          
+        </p>
+        <br /><br />
+        <button>Acá va el boton</button>
+    https://codeshare.io/3yZ6xk  </div>
+      <div class="image">
+        <img src="/imagen1.jpg" class="imagen1" />
+        <img src="/imagen2.jpg" class="imagen2" />
+      </div>
+    </div>
+  </body>
+</html>

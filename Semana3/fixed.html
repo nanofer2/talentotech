@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   
+    <title>Ejemplo de posición fija</title>
+    <style>
+        
+        body {
+        
+           
+            height: 1500px; /* Altura para permitir el desplazamiento en la página */
+        }
+
+        
+        .fixed-header {
+            position: fixed; /* Fija la cabecera en una posición específica en la ventana del navegador */
+            top: 250px; /* Posiciona la cabecera en la parte superior de la ventana */
+            left: 90%; /* Posiciona la cabecera al borde izquierdo de la ventana */
+            width: 40px; /* Hace que la cabecera ocupe todo el ancho de la ventana */
+            background-color: #333; /* Color de fondo oscuro para la cabecera */
+            color: white; /* Color del texto de la cabecera */
+            text-align: center; /* Centra el texto horizontalmente dentro de la cabecera */
+            padding: 10px; /* Añade un espacio interno (padding) alrededor del texto de la cabecera */
+        }
+
+        .content {
+            margin-top: 60px; /* Añade un margen superior para evitar que el contenido quede oculto detrás de la cabecera fija */
+            padding: 20px; /* Añade un espacio interno (padding) alrededor del contenido */
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="fixed-header">
+        Hola Compañeros <!-- Texto de la cabecera fija -->
+    </div>
+
+
+    <div class="content">
+        <p>Contenido de la página...</p> 
+        
+    </div>
+</body>
+</html>
