@@ -58,3 +58,16 @@ fetchButton.addEventListener("click", fetchPost);
 
 // hasta aqui fue el primer paso que fue crear la funcion y la peticion, ahora toca extraer la informacion
 // iteramos sobre el arreglo de objetos
+
+//------------------------------------------------- POST ---------------
+//post, se utiliza para enviar información al servidor
+
+form.addEventListener("submit",(event) =>{
+  event.preventDefault();//evita que se recargue la pagna al hacer submit
+  //currentTarget = en el form hay items de los cuales queremos obtener un valor 
+  //querySelector = identifica elementos mediante el id
+  const title = event.currentTarget.querySelector("#title").value;
+  const content = event.currentTarget.querySelector("#content").value;
+
+  console.log(title,content);
+})
