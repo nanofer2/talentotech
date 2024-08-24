@@ -1,0 +1,6 @@
+/** fin de configuración de tamaño**/
+@media (min-width: 800px) {
+    .c2, .c3{
+        width: 50%;
+    }
+}

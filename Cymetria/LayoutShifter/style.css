@@ -12,17 +12,22 @@ html{
 }
 /** fin configuracion inicial*/
 
-/** Configuración de tamaño **/
 .container{
     display: flex;
     flex-wrap: wrap;/* si el elemento no cabe hace salto de linea*/
 }
+
 .c1, .c2, .c3, .c4, .c5{
     width: 100%;
     min-width: 150px;
     min-height: 150px;
 
 }
+/*como estaba anteriormente en fluid y como c4 contiene 2 elementos solo iba a mostrar uno por los tamaños*/
+.c4{
+    height: auto;
+}
+
 .c1{
     background-color: navy;
 }
@@ -39,4 +44,34 @@ html{
     background-color: lightblue;
 }
 
-/** Voy en 1hr:11 min**/
+@media (min-width: 600px) {
+    .c1{
+        width: 25%;
+    }
+    .c4{
+        width: 75%;
+    }
+    .c5{
+        width: 100%;
+    }
+}
+
+@media (min-width: 800px) {
+    .container{
+        width: 800px;
+        margin: auto;
+    }
+    .c1{
+        width: 50%;
+        order: 1;
+    }
+
+    .c4{
+        width: 100%;
+    }
+    .c5{
+        width: 50%;
+        order: 2;
+    }
+    
+}
