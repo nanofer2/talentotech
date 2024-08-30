@@ -15,7 +15,9 @@
         data(){
                 return{
                     primerNombre: "Diego",
-                    segundoNombre: "Fernando"                    
+                    segundoNombre: "Fernando",
+                    fechaActual: new Date()
+
                 };
 
             },
@@ -27,13 +29,23 @@
             computed:{//se pueden escribir metodos normales
                 nombreCompleto(){
                     return this.primerNombre + " "+this.segundoNombre;
-                }
+                },
+                formatoFecha(){
+                    return this.fechaActual.toLocaleDateString();
+                },
             },
             template: `
                 <div>{{nombreCompleto}}</div>
+                <!--<div>{{fechaActual.toLocaleDateString()}}</div>-->
+                <div>{{formatoFecha}}</div>
             `,
         }).mount("#app")
         console.log(vm)
+        /**
+         Las propiedades computadas se usan para la logica de los datos
+         los metodos se utilizan para la logica de los eventos, 
+         los metodos son 100 % reactivos
+         * **/
     </script>
 </body>
 </html>

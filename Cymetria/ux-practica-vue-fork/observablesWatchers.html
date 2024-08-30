@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <h1>Probando repositorio!!</h1>
+    <div id="app"></div>
+    <script>
+        //los observables son metodos que se encargan de estar observando una variable en concreto
+        //crear componente VUE
+       const vm = Vue.createApp({
+        data(){
+                return{
+                    text: "Hola Mundo!!"
+                };
+
+            },
+            methods:{
+            },
+            computed:{//se pueden escribir metodos normales
+            },
+            watch:{
+                text(value, old){
+                    console.log(""+value+" - "+old)
+                }
+            },
+            template: `{{text}}
+            `,
+        }).mount("#app");
+    </script>
+</body>
+</html>

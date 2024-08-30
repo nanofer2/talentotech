@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <h1>Probando repositorio!!</h1>
+    <div id="app"></div>
+    <script>
+        //los observables son metodos que se encargan de estar observando una variable en concreto
+        //crear componente VUE
+       const vm = Vue.createApp({
+        data(){
+                return{
+                    text: "Hola Mundo!!",
+                    puerta: "Closed Door",
+                    openDoor: false,//variable observada
+                };
+
+            },
+            methods:{
+            },
+            computed:{//se pueden escribir metodos normales
+                estadoPuerta(){
+                    return this.openDoor ? "Is Closed" : "Is Open";
+                }
+            },
+            watch:{
+                text(value, old){
+                    console.log(""+value+" - "+old)
+                },
+                openDoor(value){//observador de la variable openDoor
+                    if(value){
+                        this.puerta = "Open Door";
+                    }else{
+                        this.puerta = "Closed Door"
+                    }
+                },
+            },
+            template: `
+                <div> {{puerta}}
+                <button @click = " openDoor = !openDoor "> {{estadoPuerta}} </button>
+                </div>
+            `,
+        }).mount("#app");
+    </script>
+</body>
+</html>
