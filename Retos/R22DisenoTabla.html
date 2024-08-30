@@ -1,0 +1,74 @@
+<!--
+Diseño de tabla: Crea una tabla basica con al menos 3 filas y 3 columnas, 
+aplica estilos para resaltar las celdas del encabezado y alternar el fondo de las filas.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 22</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4358e0;
+            color: #ebd9d9;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background-color: #b9cef5;
+        }
+
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th><b>Valor encabezado 1</b></th>
+                <th><b>Valor encabezado 2</b></th>
+                <th><b>Valor encabezado 3</b></th>
+                <th><b>Valor encabezado 1</b></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Valor 1</td>
+                <td>Valor 2</td>
+                <td>Valor 3</td>
+                <td>Valor 4</td>
+            </tr>
+            <tr>
+                <td>Valor 5</td>
+                <td>Valor 6</td>
+                <td>Valor 7</td>
+                <td>Valor 8</td>
+            </tr>
+            <tr>
+                <td>Valor 9</td>
+                <td>Valor 10</td>
+                <td>Valor 11</td>
+                <td>Valor 12</td>
+            </tr>
+            <tr>
+                <td>Valor 13</td>
+                <td>Valor 14</td>
+                <td>Valor 15</td>
+                <td>Valor 16</td>
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>
