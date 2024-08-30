@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <h1>Probando repositorio!!</h1>
+    <div id="app">
+    </div>
+    <script>
+        //crear componente VUE
+        //se agrego a una variable, esto permite que se utilice en deterrminados contextos
+       const vm = Vue.createApp({
+            data(){
+                return{
+                    text : "renderizando desde remplate", //esta variable la voy a enviar al <p></p>
+                    textohtml : "<p>texto en html</p>",
+                }
+            },
+            //con las comillas podeos acceder a las variables concatenandolas en la misma cadena
+            template:`<div v-once v-html ="textohtml"></div>`, //usar v-html para que entienda etiquetas en html
+            //v-once renderiza una unica vez y luego no hace cambios (no se ve el cambio en el html)
+            //montar el componente dentro del div app
+        }).mount("#app")
+        console.log(vm)
+    </script>
+</body>
+</html>

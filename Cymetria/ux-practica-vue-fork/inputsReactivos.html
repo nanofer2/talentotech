@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <h1>Probando repositorio!!</h1>
+    <div id="app"></div>
+    <p></p>
+    <input type="text">
+    <script>
+        //crear componente VUE
+       const vm = Vue.createApp({
+        data(){
+                return{
+                    text: "Hola Mundo"
+                };
+
+            },
+            methods:{
+                input(e){
+                    this.text = e.target.value;//cuando se haga click fuera del input recarga lo que hay en el parrafo
+                    console.log(e)
+                }
+            },
+            /**
+             `
+                <p>{{text}}</p>
+                <input type="text"  
+                    v-on:change="input" 
+                    v-bind:value="text"/>
+            `
+            */
+            //v-on se puede representar con @ 
+            //v-bind se puede representar con : 
+            template: `
+                <p>{{text}}</p>
+                <input type="text"  
+                    @change="input" 
+                    :value="text"/>
+            `,/*con el v-bind la variable text esta siempre escuchando, 
+                esto significa que siempre esta a la espera del evento que cambia el valor ne este caso el onchage del input*/
+        }).mount("#app")
+        console.log(vm)
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <h1>Probando repositorio!!</h1>
+    <div id="app"></div>
+    <script>
+        //crear componente VUE
+       const vm = Vue.createApp({
+        data(){
+                return{
+                    primerNombre: "Diego",
+                    segundoNombre: "Fernando"                    
+                };
+
+            },
+            /*las propiedades computadas permiten reducir las expresiones
+              o une expresiones para no hacer concatenaciones
+            */
+            methods:{
+            },
+            computed:{//se pueden escribir metodos normales
+                nombreCompleto(){
+                    return this.primerNombre + " "+this.segundoNombre;
+                }
+            },
+            template: `
+                <div>{{nombreCompleto}}</div>
+            `,
+        }).mount("#app")
+        console.log(vm)
+    </script>
+</body>
+</html>

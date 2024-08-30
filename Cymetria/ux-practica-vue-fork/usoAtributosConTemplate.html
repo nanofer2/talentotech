@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <h1>Probando repositorio!!</h1>
+    <div id="app">
+    </div>
+    <script>
+        //crear componente VUE
+       const vm = Vue.createApp({
+            data(){
+                return{
+                    img:"https://images.pexels.com/photos/5733422/pexels-photo-5733422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    alt:"img"
+                }
+            },
+            template:`<img v-bind:src="img" v-bind:alt="alt">`,//v-bind: hace referencia a los atributos de html
+        }).mount("#app")
+        console.log(vm)
+    </script>
+</body>
+</html>
