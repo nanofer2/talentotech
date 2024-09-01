@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<style>
+    html,body{
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #app, .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+    button{
+        margin-top: 24px;
+        border: none;
+        background-color: white;
+        padding: 8px 24px;
+        border-radius: 12px;
+    }
+    .closed{
+        background-color: #eca1a6;
+    }
+    .open{
+        background-color: #b5e7a0;
+    }
+    .item{
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <h1>Probando repositorio!!</h1>
+    <div id="app"></div>
+
+    
+    <script>
+        //los observables son metodos que se encargan de estar observando una variable en concreto
+        //crear componente VUE
+       const vm = Vue.createApp({
+        data(){
+                return{
+                    puerta: "Inicia Sesión",
+                    openDoor: false,//variable observada
+                    usuarioNombre: "",
+                    posts:[
+                        {
+                            titulo: "Titulo 1",
+                            descripcion: "Descripción"
+                        },
+                        {
+                            titulo: "Titulo 2",
+                            descripcion: "Descripción"
+                        },
+                        {
+                            titulo: "Titulo 3",
+                            descripcion: "Descripción"
+                        },
+                        {
+                            titulo: "Titulo 4",
+                            descripcion: "Descripción"
+                        },
+                        {
+                            titulo: "Titulo 5",
+                            descripcion: "Descripción"
+                        },                                                
+                    ],
+                };
+
+            },
+            methods:{
+            },
+            computed:{//se pueden escribir metodos normales
+                estadoPuerta(){
+                    return this.openDoor ? "Salir" : "Acceder";
+                },
+                stylus(){
+                    return this.openDoor ? "open" : "closed";
+                },
+
+            },
+            watch:{
+                openDoor(value){//observador de la variable openDoor
+                    if(value){
+                        this.puerta = "Sesión iniciada";
+                    }else{
+                        this.puerta = "Sesión Cerrada";
+                        this.usuarioNombre = ""
+                    }
+                },
+            },
+            //v-for itera sobre los elementos de una lista (arreglo)
+            //si se usa v-for="(item,i)"  :key="1" obtiene el identificador (posicion de elemento)
+            template: `
+                <div class="container" :class="stylus">
+                    <h2>{{puerta}}</h2>                    
+                    <div v-if="openDoor">
+                        <p>{{usuarioNombre}}</p>
+
+
+                    <div class="list" >
+                        <div v-for="item in posts" class="item">
+                            <h4>{{item.titulo}}</h4>
+                            <p>{{item.descripcion}}</p>
+                        </div>
+                    </div>                        
+
+
+
+
+                    </div>
+                    <div v-else>
+                        <p>hola, {{usuarioNombre}}</p>
+                        <input type="text" v-model="usuarioNombre"/>
+                    </div>                    
+                    <button 
+                    @click= "openDoor = !openDoor" >
+                    {{estadoPuerta}}</button>
+                </div>
+            `,
+        }).mount("#app");
+    </script>
+</body>
+</html>

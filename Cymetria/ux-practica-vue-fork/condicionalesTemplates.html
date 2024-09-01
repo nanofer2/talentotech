@@ -47,11 +47,9 @@
        const vm = Vue.createApp({
         data(){
                 return{
-                    puerta: "Closed Door",
+                    puerta: "Inicia Sesión",
                     openDoor: false,//variable observada
-               //     styles:{
-                //        backgroundColor : "grey"
-                //    }
+                    usuarioNombre: "",
                 };
 
             },
@@ -59,7 +57,7 @@
             },
             computed:{//se pueden escribir metodos normales
                 estadoPuerta(){
-                    return this.openDoor ? "Is Closed" : "Is Open";
+                    return this.openDoor ? "Salir" : "Acceder";
                 },
                 stylus(){
                     return this.openDoor ? "open" : "closed";
@@ -69,16 +67,26 @@
             watch:{
                 openDoor(value){//observador de la variable openDoor
                     if(value){
-                        this.puerta = "Open Door";
+                        this.puerta = "Sesión iniciada";
                     }else{
-                        this.puerta = "Closed Door";
+                        this.puerta = "Sesión Cerrada";
+                        this.usuarioNombre = ""
                     }
                 },
             },
             template: `
                 <div class="container" :class="stylus">
-                    <h2>{{puerta}}</h2>
-                    <button @click= "openDoor = !openDoor" >{{estadoPuerta}}</button>
+                    <h2>{{puerta}}</h2>                    
+                    <div v-if="openDoor">
+                        <p>{{usuarioNombre}}</p>
+                    </div>
+                    <div v-else>
+                        <p>hola, {{usuarioNombre}}</p>
+                        <input type="text" v-model="usuarioNombre"/>
+                    </div>                    
+                    <button 
+                    @click= "openDoor = !openDoor" >
+                    {{estadoPuerta}}</button>
                 </div>
             `,
         }).mount("#app");
