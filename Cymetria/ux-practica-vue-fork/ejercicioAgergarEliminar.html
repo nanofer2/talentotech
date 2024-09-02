@@ -1,3 +1,7 @@
+<!--
+El ejercicio consiste en agregar y eliminar posts, 
+este se basa en el ejercicio de estilos reactivos previamente visto
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,7 +85,7 @@
 
             },
             methods:{
-                //permite agregat items
+                //permite agregar items a la variable posts
                 agregar(){
                     if(this.nombreTitulo && this.descripcionPost){
                         this.posts.push(
@@ -90,12 +94,14 @@
                                 descripcion: this.descripcionPost        
                             }
                         );
+                        this.nombreTitulo = "";
+                        this.descripcionPost ="";
 
                     }
 
                 },
                 eliminar(index){
-
+                    this.posts.splice(index,1)//este splice dice que elimina de la pocisión (index) 1 item
                 },
             },
             computed:{//se pueden escribir metodos normales
@@ -125,13 +131,18 @@
                     <div v-if="openDoor">
                         <p>{{usuarioNombre}}</p>
 
-
-                    <div class="list" >
-                        <div v-for="item in posts" class="item">
-                            <h4>{{item.titulo}}</h4>
-                            <p>{{item.descripcion}}</p>
+                        <div>
+                            <input type="text" v-model="nombreTitulo" placeholder="Titulo">
+                            <input type="text" v-model="descripcionPost" placeholder="Descripción">
+                            <button @click="agregar">Agregar</button>
                         </div>
-                    </div>                        
+                        <div class="list" >
+                            <div v-for="(item , i) in posts" :key=i class="item">
+                                <h4>{{item.titulo}}</h4>
+                                <p>{{item.descripcion}}</p>
+                                <button @click = "eliminar (i)" > eliminar Post</button>                                
+                            </div>
+                        </div>                        
 
 
 
@@ -148,9 +159,5 @@
             `,
         }).mount("#app");
     </script>
-
-    <input type="text" v-model="nombreTitulo" placeholder="Titulo">
-    <input type="text" v-model="descripcionPost" placeholder="Descripción">
-    <button @click="agregar">Agregar</button>
 </body>
 </html>

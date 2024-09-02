@@ -1,0 +1,62 @@
+<!--
+El ejercicio consiste en agregar y eliminar posts, 
+este se basa en el ejercicio de estilos reactivos previamente visto
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+
+    
+    <script>
+       const app = Vue.createApp({
+        data(){
+                return{
+ 
+                };
+
+            },
+            methods:{//metodos que permiten cambiar el estado de las variables
+            },
+            computed:{//se pueden escribir metodos normales
+
+            },
+            watch:{
+
+            },
+            template: `
+                <div>
+                    <mini-layout>
+                        <template v-slot:header>Este es un ejemplo de header</template>
+                        <template v-slot:contenido>Este es un ejemplo de contenido</template>                        
+                    </mini-layout>
+                </div>
+                <br>
+                <div>
+                    <mini-layout>
+                        <template v-slot:header>Este es un ejemplo de header 2</template>
+                        <template v-slot:contenido>Este es un ejemplo de contenido 2</template>                        
+                    </mini-layout>
+                </div>                  
+            `,
+        });
+
+        app.component ("mini-layout",{
+            template:`
+                <header> <slot name="header"></slot> </header>
+                <div> <slot name ="contenido"></slot></div>
+            `,
+
+        });
+
+        const vm = app.mount("#app")
+    </script>
+    
+</body>
+</html>
