@@ -1,7 +1,7 @@
 function MyOrders(){
-    return{
-        
-    }
+    return (
+        <div className="bg-stone-400">Hola MyOrders!</div>
+        )
 }
 
 export default MyOrders

@@ -1,7 +1,7 @@
 function NotFound(){
-    return{
-        
-    }
+    return (
+        <div className="bg-stone-400">Page Not Found!</div>
+        )
 }
 
 export default NotFound
