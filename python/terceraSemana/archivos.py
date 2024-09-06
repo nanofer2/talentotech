@@ -1,3 +1,5 @@
+#numpy, pandas, request
+
 nombre_archivo = "notas_ejem.txt"
 
 with open(nombre_archivo,'w',encoding='UTF-8') as archivo:
