@@ -1,6 +1,16 @@
 import { NavLink } from "react-router-dom";
 const Navbar = () =>{
     return(
+        /**
+         el estilo aplicado pone en negrita la ganina en la que estoy parado
+         Justify-between divide los items por cada <li>
+         w-full es un width de 100% 
+         fixed  queda fijado en la seccion de arriba
+         z es igual al zindex para que no se pierda la barra de navegacion 
+         py es el paginado en el eje y 
+         px paginado en el eje x 
+         gap-3 separacion entre items
+         * **/
         <nav className="flex justify-between items-center fixed z-10 w-full py-5 px-8 text-sm font-light top-8">
             <ul className="flex items-center gap-3 " >
                 <li>
@@ -49,7 +59,7 @@ const Navbar = () =>{
                             viewTransitionName: isTransitioning ? "slide" : "",
                             };
                         }}
-                    >Mi cuenta</NavLink>
+                    >My acount</NavLink>
                 </li>
                 <li>
                     <NavLink to="/my-orders"
@@ -60,7 +70,7 @@ const Navbar = () =>{
                             viewTransitionName: isTransitioning ? "slide" : "",
                             };
                         }}
-                    >Mis Ordenes</NavLink>
+                    >My Orders</NavLink>
                 </li>
                 <li>
                     <NavLink to="/sign-in"
@@ -71,7 +81,7 @@ const Navbar = () =>{
                             viewTransitionName: isTransitioning ? "slide" : "",
                             };
                         }}
-                    >Registrarse</NavLink>
+                    >Sign in</NavLink>
                 </li>                       
             </ul>        
         </nav>
