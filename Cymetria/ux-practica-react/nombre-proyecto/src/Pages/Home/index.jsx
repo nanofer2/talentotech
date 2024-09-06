@@ -1,7 +1,7 @@
 //   useEffect permite declarar los eventos de consumo hacer peticiones a un API 
 import { useState, useEffect } from "react";
-import Layout from "../../Components/Navbar/Layout"
-import Card from "../../Components/Navbar/Card";
+import Layout from "../../Components/Layout"
+import Card from "../../Components/Card";
 function Home(){
 
   /*
