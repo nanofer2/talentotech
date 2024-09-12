@@ -4,6 +4,7 @@
   flex-col secciona en columnas
   items-center lo que haya dentro de ese componente se va a centrar
   mt-20 margen
+  children, ver sesion 21 OJO
  * **/
 const Layout = ({children})=>{
     return(

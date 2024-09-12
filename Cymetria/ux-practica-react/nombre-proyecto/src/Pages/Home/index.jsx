@@ -23,11 +23,13 @@ function Home(){
       //<div className="bg-stone-400">Hola Home!</div>
       //{} = bloque de codigo ()=retorno de objetos
       <Layout>Home!
+        <div className="grid gap-4 grid-cols-4 w-full max-w-screen-lg">
         {
           /** ? = si vienen items */
           //por cada item debe crear una tarjeta
-          items?.map(() =>(
-            <Card/>
+          
+          items?.map((item) =>(
+            <Card key={item.id} data={item}/>
           ))
 /*          items?.map(()=>(
             
@@ -37,6 +39,7 @@ function Home(){
           )
           )*/
         }
+        </div>
       </Layout>
       );
 }
