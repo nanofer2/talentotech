@@ -1,5 +1,10 @@
+import { ShoppingBagIcon } from "@heroicons/react/24/solid"
 import { NavLink } from "react-router-dom";
+import { ShoppingCartContext } from "../../Context";
+import { useContext } from "react";
 const Navbar = () =>{
+    const context = useContext(ShoppingCartContext);//llama al contexto y lo inclusta dentro de la tarjeta para usar lo que hay en el contexto
+
     return(
         /**
          el estilo aplicado pone en negrita la ganina en la que estoy parado
@@ -82,6 +87,10 @@ const Navbar = () =>{
                             };
                         }}
                     >Sign in</NavLink>
+                </li>
+                <li className="flex items-center">
+                    <ShoppingBagIcon className="h-6 w-6 text-blue-500"></ShoppingBagIcon> 
+                    <div>{context.count}</div> 
                 </li>                       
             </ul>        
         </nav>

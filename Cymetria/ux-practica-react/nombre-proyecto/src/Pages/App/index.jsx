@@ -1,4 +1,5 @@
 import { useRoutes,BrowserRouter } from "react-router-dom";
+import { ShoppingCartProvider } from "../../Context"; //contexto que va a englobarse en toda la app 
 import Home from "../Home";
 import MyAcount from "../MyAcount";
 import MyOrder from "../MyOrder";
@@ -28,10 +29,12 @@ const  App=()=> {//se deja en una constante para poder usarla en otros lados (se
   //la etiqueta <AppRoutes /> gestiona las rutas esta etiqueta puede ser nombrada de esta manera <AppRoutes /> debido a que es una funcion. 
   // <BrowserRouter> da el espacio de trabajo para trabajar las rutas
   return (
-    <BrowserRouter>
-      <AppRoutes />
-      <Navbar />
-    </BrowserRouter>
+    <ShoppingCartProvider>
+      <BrowserRouter>
+        <AppRoutes />
+        <Navbar />
+      </BrowserRouter>
+    </ShoppingCartProvider>
   )
 }
 
