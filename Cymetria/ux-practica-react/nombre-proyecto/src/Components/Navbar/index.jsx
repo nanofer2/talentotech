@@ -16,7 +16,8 @@ const Navbar = () =>{
          px paginado en el eje x 
          gap-3 separacion entre items
          * **/
-        <nav className="flex justify-between items-center fixed z-10 w-full py-5 px-8 text-sm font-light top-8">
+        
+        <nav className="flex justify-between items-center fixed z-10 w-full py-5 px-8 text-sm font-light top-0">
             <ul className="flex items-center gap-3 " >
                 <li>
                     <NavLink to="/" 

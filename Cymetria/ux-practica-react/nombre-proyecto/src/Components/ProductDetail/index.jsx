@@ -5,6 +5,8 @@ import { XMarkIcon } from "@heroicons/react/24/solid" //importo el icono de la X
 import './styles.css'
 const ProductDetail = () =>{
     const context = useContext(ShoppingCartContext);//llama al contexto y lo inclusta dentro de la tarjeta para usar lo que hay en el contexto
+    console.log("producto que llega: ", context.productToShow);//producto enviado desde el componente card
+
     return (
         <aside className={`${
             context.isProductDetailOpen ? "flex" : "hidden" //juego con las variables del contexto para seleccionar el estilo deseado
@@ -17,6 +19,18 @@ const ProductDetail = () =>{
                         className="h-6 w-6 text-white bg-red-600 rounded-full cursor-pointer" ></XMarkIcon>
                 </div>
             </div>
+            <figure className="px-6 mb-2 "> 
+                <img
+                    className="w-full h-full rounder-lg" 
+                    src={context.productToShow.images} 
+                    alt={context.productToShow.title} />
+            </figure>
+            <p className="flex flex-col p-6">
+                <span className="font-medium text-2xl">${context.productToShow.price}</span>
+                <span className="font-medium text-md">{context.productToShow.title}</span>
+                <span className="font-light">{context.productToShow.description}</span>
+                <span className=""></span>
+            </p>
         </aside>
     );
 
