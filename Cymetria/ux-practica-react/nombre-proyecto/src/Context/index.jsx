@@ -12,6 +12,12 @@ export const ShoppingCartProvider = ({children}) =>{
 
     const [productToShow,setProductToShow] = useState({});//state de un objeto
 
+    const [cartProducts,setCartProducts] = useState([]);//state de un Array
+
+    const [isCheckoutSideMenuOpen,setIsCheckoutSideMenuOpen] = useState(false);//el valor dentro de parentesis es el valor inicial de las variables (false) en este caso es false
+    const openCheckoutSideMenu = () =>setIsCheckoutSideMenuOpen(true);
+    const closeCheckoutSideMenu = () =>setIsCheckoutSideMenuOpen(false);
+
     //vamos a ser proveedores del contexto al ser llamado desde cualquier lado se puede ir agregando a este componente
     return(
         //en el value envio el valor del contador (atraves de directivas)
@@ -24,6 +30,12 @@ export const ShoppingCartProvider = ({children}) =>{
             closeProductDetail,
             productToShow,
             setProductToShow,
+            cartProducts,
+            setCartProducts,
+            isCheckoutSideMenuOpen,
+            setIsCheckoutSideMenuOpen,
+            openCheckoutSideMenu,
+            closeCheckoutSideMenu,
 
             }}> 
             {children}
