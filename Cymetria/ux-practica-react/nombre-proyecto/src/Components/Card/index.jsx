@@ -7,6 +7,7 @@
  * **/
 import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context";
+import { PlusIcon } from "@heroicons/react/24/solid";
 const Card = (data) =>{
 
     const context = useContext(ShoppingCartContext);//llama al contexto y lo inclusta dentro de la tarjeta para usar lo que hay en el contexto
@@ -16,10 +17,19 @@ const Card = (data) =>{
         context.setProductToShow(ProductDetail);
     };
 
+    const addProductTocart = (event,productData) => {
+        event.stopPropagation();
+        context.setCount(context.count + 1);
+        context.setCartProducts([...context.cartProducts, productData]);
+        console.log("Información de Articulo en Carrito",context.cartProducts )
+        context.openCheckoutSideMenu();
+        context.closeProductDetail();
+    };
+
     return(
         <div 
             className="bg-white cursor-pointer w-56 h-60 rounded-lg" 
-            onClick={() => showProductDetail(data.data)}
+            onClick={() => showProductDetail(data.data) }
         >
             <figure className="relative mb-2 w-full h-4/5">
                 <span className='absolute bottom-0 left-0 bg-white/60 text-black text-xs m-2 px-3 py-0.5'>{data.data.category.name}</span>
@@ -28,8 +38,8 @@ const Card = (data) =>{
                  alt={data.data.title} />
                 <div 
                     className='absolute top-1 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1'
-                    onClick={()=>  context.setCount(context.count + 1)}>
-                    +
+                    onClick={(event)=> addProductTocart(event,data.data)}>
+                    <PlusIcon></PlusIcon>
                 </div>
             </figure>
             <p className=' flex justify-between'>
