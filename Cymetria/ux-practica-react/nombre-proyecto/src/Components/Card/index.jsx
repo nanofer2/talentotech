@@ -36,10 +36,11 @@ const Card = (data) =>{
                 <img className=' w-full h-full object-cover rounded-lg' 
                  src={data.data.images[1]}
                  alt={data.data.title} />
-                <div 
-                    className='absolute top-1 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1'
-                    onClick={(event)=> addProductTocart(event,data.data)}>
-                    <PlusIcon></PlusIcon>
+                <div>
+                    <PlusIcon
+                        className='absolute top-1 right-0 flex justify-center items-center  text-white bg-green-600 w-6 h-6 rounded-full m-2 p-1'
+                        onClick={(event)=> addProductTocart(event,data.data)}
+                    ></PlusIcon>
                 </div>
             </figure>
             <p className=' flex justify-between'>
