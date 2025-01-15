@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio de Contraste</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Estilos para que los div se muestren en un cuadro */
+        .color-box {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            display: inline-block;
+        }
+
+
+        /* Colores de fondo para los divs */
+
+        .color-1 { background-color: red; }
+        .color-2 { background-color: blue; }
+        .color-3 { background-color: green; }
+        .color-4 { background-color: yellow; }
+        .color-5 { background-color: orange; }`
+        .color-6 { background-color: purple; }
+        .color-7 { background-color: pink; }
+        .color-8 { background-color: cyan; }
+        .color-9 { background-color: brown; }
+        .color-10 { background-color: lime; }
+
+        /* Clase que invierte los colores */
+        .invert-colors {
+            filter: invert(1);
+            background-color: #fff;
+            -webkit-filter: invert(1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Página con Cambio de Contraste</h1>
+    <button onclick="toggleInvert()">Cambiar Contraste</button>
+
+    <div class="container">
+        <div class="color-box color-1"></div>
+        <div class="color-box color-2"></div>
+        <div class="color-box color-3"></div>
+        <div class="color-box color-4"></div>
+        <div class="color-box color-5"></div>
+        <div class="color-box color-6"></div>
+        <div class="color-box color-7"></div>
+        <div class="color-box color-8"></div>
+        <div class="color-box color-9"></div>
+        <div class="color-box color-10"></div>
+    </div>
+
+    <script>
+        function toggleInvert() {
+            // Obtiene el elemento <html>
+            var htmlElement = document.documentElement;
+
+            // Alterna la clase 'invert-colors'
+            htmlElement.classList.toggle("invert-colors");
+        }
+    </script>
+
+</body>
+</html>
